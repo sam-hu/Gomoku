@@ -1,12 +1,12 @@
 Sam Hu
 
-***Instructions:***
+Instructions
+------------------------------------------------------------------------------------
 
-Run the Main.java file from GUI to launch the GUI or from clui to launch using
-console
+Run fiveinrow.jar
 
 Select players for the game by following the instructions in the pop-up boxes
-when first starting the game.
+when first starting the game. Careful, the smartAI is unbeatable!
 
 If two AIs are playing against each other, you will not be able to interact
 with the board.
