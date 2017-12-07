@@ -1,0 +1,44 @@
+package model;
+
+/**
+ * A Location is a (row, column) pair, where the row and column are
+ * in the ranges 0..NUM_ROWS-1 and 0..NUM_COLS-1 respectively.
+ * 
+ * <p>Locations are immutable.
+ */
+public class Location {
+	/** the row number, in the range 0..Board.NUM_ROWS-1 */
+	public final int row;
+
+	/** the column number, in the range 0..Board.NUM_COLS-1 */
+	public final int col;
+
+	/**
+	 * Create a new location.
+	 * Precondition: row and col are in the range 0..NUM_ROWS-1
+	 *               and 0..NUM_COLS-1 respectively.
+	 */
+	public Location(int row, int col) {
+		if (!( 0 <= row && row < Board.NUM_ROWS
+		    && 0 <= col && col < Board.NUM_COLS))
+			throw new IllegalArgumentException("location out of bounds");
+		this.row = row; this.col = col;
+	}
+	
+	public @Override String toString() {
+		return "(" + this.row + "," + this.col + ")";
+	}
+	
+	/** Two Locations are equal if they have the same row and column. */
+	public @Override boolean equals(Object other) {
+		if (!(other instanceof Location))
+			return false;
+		Location o = (Location) other;
+		return o.row == this.row && o.col == this.col;
+	}
+	
+	/** Returns true if this equals (row,col) */
+	public boolean equals(int row, int col) {
+		return this.row == row && this.col == col;
+	}
+}
